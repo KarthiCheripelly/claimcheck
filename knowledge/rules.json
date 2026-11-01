@@ -1,0 +1,37 @@
+{
+  "_note": "Knowledge lives HERE, not in the LLM. Every number has a source document + page. When a policy version or regulation changes, add a new entry - never edit an old one (old claims are judged by the version active on their policy).",
+  "regulation": {
+    "source": "IRDAI Master Circular on Health Insurance Business, 29 May 2024 (IRDAI/HLT/CIR/PRO/84/5/2024)",
+    "file": "research/1_regulation/IRDAI_Master_Circular_Health_2024-05-29.pdf",
+    "moratorium_months": 60,
+    "moratorium_cite": "Para 13 (p.8): no policy/claim contestable on non-disclosure/misrepresentation, except established fraud, after 60 months of continuous coverage",
+    "specific_reason_cite": "Para 17(b) (p.9): repudiation must give reference to the specific terms and conditions of the policy",
+    "committee_cite": "Para 17(a) (p.9): no claim repudiated without approval of PMC / Claims Review Committee"
+  },
+  "policies": {
+    "SHAHLIP26046V092526": {
+      "name": "Star Health Family Health Optima, V.26 / 2026",
+      "file": "research/2_policy_wordings/StarHealth_FamilyHealthOptima_wording_V26.pdf",
+      "ped_lookback_months": 36,
+      "ped_lookback_cite": "Definitions - Pre-Existing Disease (p.6)",
+      "ped_waiting_months": 36,
+      "ped_waiting_cite": "Standard Exclusion Code Excl 01 (p.28)",
+      "specified_waiting_months": 24,
+      "specified_waiting_cite": "Standard Exclusion Code Excl 02 (p.28)",
+      "initial_waiting_days": 30,
+      "initial_waiting_cite": "Standard Exclusion Code Excl 03 (p.29)"
+    },
+    "SHAHLIP23164V072223": {
+      "name": "Star Health Family Health Optima, V.19 / 2023",
+      "file": "research/2_policy_wordings/StarHealth_FamilyHealthOptima_wording_V19_2023_old.pdf",
+      "ped_lookback_months": 48,
+      "ped_lookback_cite": "Definitions - Pre-Existing Disease (p.4)",
+      "ped_waiting_months": 48,
+      "ped_waiting_cite": "Standard Exclusion Code Excl 01 (p.10)",
+      "specified_waiting_months": 24,
+      "specified_waiting_cite": "Standard Exclusion Code Excl 02 (p.10)",
+      "initial_waiting_days": 30,
+      "initial_waiting_cite": "Standard Exclusion Code Excl 03 (p.10)"
+    }
+  }
+}

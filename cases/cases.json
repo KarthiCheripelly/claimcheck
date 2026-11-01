@@ -1,0 +1,437 @@
+[
+ {
+  "id": "C01",
+  "tests": "30-day initial waiting period, genuine illness -> rejection correct",
+  "expected": "LIKELY_VALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nInsurer: Star Health and Allied Insurance Co. Ltd.\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Anita Sharma (34)\nFirst inception with insurer: 01/03/2025\nPortability: Not applicable (fresh policy)\nPre-existing diseases declared in proposal: None",
+   "rejection_letter": "Dear Ms Sharma, your claim for hospitalisation from 15/03/2025 for Dengue fever has been repudiated as the illness was contracted within the first 30 days of the policy, which is excluded under Code Excl 03.",
+   "discharge_summary": "Admitted 15/03/2025. Diagnosis: Dengue fever (NS1 positive). Fever since 12/03/2025. No significant past history."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-03-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-03-15",
+   "accident": false,
+   "condition": "Dengue fever",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-03-15",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Code Excl 03"
+  }
+ },
+ {
+  "id": "C02",
+  "tests": "30-day waiting wrongly applied to an ACCIDENT -> rejection wrong",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Rohit Verma (29)\nFirst inception with insurer: 10/06/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "We regret to inform you that claim for admission dated 22/06/2025 falls within the initial 30 days waiting period (Code Excl 03) and hence is not admissible.",
+   "discharge_summary": "Date of admission: 22/06/2025. Patient brought to casualty following a road traffic accident (two-wheeler skid). Diagnosis: Fracture distal radius, right. ORIF done."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-06-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-22",
+   "accident": true,
+   "condition": "Fracture distal radius",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-06-22",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Code Excl 03"
+  }
+ },
+ {
+  "id": "C03",
+  "tests": "Declared PED, 36-month wait (V26) already over -> rejection wrong",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Suresh Iyer (52)\nFirst inception with insurer: 10/01/2023 (renewed without break)\nPortability: Nil\nPre-existing diseases declared and accepted: Type 2 Diabetes Mellitus",
+   "rejection_letter": "Your claim towards admission on 05/04/2026 for diabetic ketoacidosis is a direct complication of a pre-existing disease and is therefore excluded under Code Excl 01.",
+   "discharge_summary": "DOA 05/04/2026. Diagnosis: Diabetic ketoacidosis. Known case of Type 2 Diabetes Mellitus since June 2021, on oral hypoglycaemics."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-01-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-04-05",
+   "accident": false,
+   "condition": "Diabetic ketoacidosis (Type 2 Diabetes)",
+   "specified_disease_category": false,
+   "diagnosis_date": "2021-06-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C04",
+  "tests": "SAME facts as C03 but OLD wording V19 (48-month wait) -> rejection correct. Shows policy version matters.",
+  "expected": "LIKELY_VALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP23164V072223\nInsured: Suresh Iyer (52)\nFirst inception with insurer: 10/01/2023 (renewed without break)\nPortability: Nil\nPre-existing diseases declared and accepted: Type 2 Diabetes Mellitus",
+   "rejection_letter": "Your claim towards admission on 05/04/2026 for diabetic ketoacidosis is a direct complication of a pre-existing disease and is therefore excluded under Code Excl 01.",
+   "discharge_summary": "DOA 05/04/2026. Diagnosis: Diabetic ketoacidosis. Known case of Type 2 Diabetes Mellitus since June 2021, on oral hypoglycaemics."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP23164V072223",
+   "first_inception_date": "2023-01-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-04-05",
+   "accident": false,
+   "condition": "Diabetic ketoacidosis (Type 2 Diabetes)",
+   "specified_disease_category": false,
+   "diagnosis_date": "2021-06-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C05",
+  "tests": "Undeclared hypertension, 13 months of cover -> rejection correct",
+  "expected": "LIKELY_VALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Meena Gupta (47)\nFirst inception with insurer: 01/01/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "On scrutiny of records it is observed that the insured is suffering from hypertension prior to inception of the policy which was not disclosed in the proposal. The claim is repudiated under Code Excl 01 and for non-disclosure of material facts.",
+   "discharge_summary": "Admitted on 01/02/2026 with hypertensive urgency. Past history: Hypertension diagnosed in May 2024 at local clinic, on Amlodipine 5 mg since then."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-01",
+   "accident": false,
+   "condition": "Hypertensive urgency",
+   "specified_disease_category": false,
+   "diagnosis_date": "2024-05-01",
+   "last_advice_or_treatment_before_inception": "2024-12-01",
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C06",
+  "tests": "Non-disclosure after 67 months -> 60-month MORATORIUM makes rejection wrong (unless fraud)",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP23164V072223\nInsured: Prakash Rao (61)\nFirst inception with insurer: 01/08/2020, continuously renewed\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "The insured had Ischaemic Heart Disease prior to taking the policy, which was not disclosed. As this amounts to non-disclosure of material information, the claim stands repudiated.",
+   "discharge_summary": "Admission: 10/03/2026. Procedure: PTCA with stent to LAD. History: Old case of IHD diagnosed April 2019, on Aspirin and Atorvastatin."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP23164V072223",
+   "first_inception_date": "2020-08-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-03-10",
+   "accident": false,
+   "condition": "Ischaemic heart disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2019-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "non_disclosure"
+   ],
+   "clause_cited": null
+  }
+ },
+ {
+  "id": "C07",
+  "tests": "Only SYMPTOMS before policy, diagnosis came after -> code must not decide; doctor reviews",
+  "expected": "NEEDS_HUMAN",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Vikram Joshi (45)\nFirst inception with insurer: 01/02/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "The ailment Coronary Artery Disease is pre-existing in nature as per the history recorded. Claim is not payable under Code Excl 01.",
+   "discharge_summary": "Admitted 01/12/2025 for elective angioplasty. History: patient gives history of occasional chest discomfort on exertion since 2024, not evaluated earlier. CAD diagnosed on 20/11/2025 by coronary angiography."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-02-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-12-01",
+   "accident": false,
+   "condition": "Coronary artery disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-11-20",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": true,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C08",
+  "tests": "Cataract (listed disease) at 12 months -> 24-month wait applies -> rejection correct",
+  "expected": "LIKELY_VALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Kamala Devi (66)\nFirst inception with insurer: 15/01/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Cataract surgery is subject to a waiting period of 24 months under Code Excl 02. As the policy has not completed 24 months, the claim is not admissible.",
+   "discharge_summary": "Date of admission 20/01/2026. Procedure: Phacoemulsification with IOL, left eye, for senile cataract diagnosed 05/01/2026."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-15",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-20",
+   "accident": false,
+   "condition": "Senile cataract",
+   "specified_disease_category": true,
+   "diagnosis_date": "2026-01-05",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  }
+ },
+ {
+  "id": "C09",
+  "tests": "Kidney stone (listed) at 27 months -> 24-month wait over -> rejection wrong",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Arjun Nair (38)\nFirst inception with insurer: 01/06/2023, renewed without break\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Treatment of kidney calculi falls under specified diseases with waiting period, Code Excl 02. Claim repudiated.",
+   "discharge_summary": "Admitted 01/09/2025 with right renal colic. USG: 9 mm right renal calculus, first detected on 28/08/2025. URSL done."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-06-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-09-01",
+   "accident": false,
+   "condition": "Renal calculus",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-08-28",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  }
+ },
+ {
+  "id": "C10",
+  "tests": "PORTED policy: 6 months here + 30 months earlier = 36 -> rejection wrong; letter cites no clause",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Farah Khan (31)\nFirst inception with insurer: 01/05/2025\nPortability: Ported from previous insurer with 30 months of continuous coverage\nPED declared and accepted: Bronchial asthma",
+   "rejection_letter": "We have reviewed your claim and regret that it is not payable since the illness is pre-existing.",
+   "discharge_summary": "Admission date 01/11/2025. Acute exacerbation of bronchial asthma. Asthma diagnosed in January 2023, on inhalers."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-05-01",
+   "prior_continuous_coverage_months": 30,
+   "admission_date": "2025-11-01",
+   "accident": false,
+   "condition": "Bronchial asthma exacerbation",
+   "specified_disease_category": false,
+   "diagnosis_date": "2023-01-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  }
+ },
+ {
+  "id": "C11",
+  "tests": "Policy wording NOT in knowledge base -> must refuse to judge",
+  "expected": "NEEDS_HUMAN",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nInsurer: Example General Insurance Ltd (synthetic)\nProduct: Example Health Plus\nUIN: EXGHLIP99999V010101\nInsured: Neha Patil (40)\nFirst inception with insurer: 01/01/2024\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Claim for thyroidectomy is rejected under the 24 months waiting period clause 4.2.",
+   "discharge_summary": "Admitted 01/06/2025. Total thyroidectomy for multinodular goitre diagnosed 01/04/2025."
+  },
+  "gold_facts": {
+   "policy_uin": "EXGHLIP99999V010101",
+   "first_inception_date": "2024-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-01",
+   "accident": false,
+   "condition": "Multinodular goitre",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "clause 4.2"
+  }
+ },
+ {
+  "id": "C12",
+  "tests": "Epilepsy diagnosed 2012 (outside 36-month window) BUT treated within it -> still PED; undeclared -> rejection correct",
+  "expected": "LIKELY_VALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Rahul Das (27)\nFirst inception with insurer: 01/04/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Insured is a known epileptic prior to the policy, not declared at proposal stage. Claim repudiated under Code Excl 01.",
+   "discharge_summary": "Admitted 10/01/2026 with breakthrough seizure. Known case of epilepsy since 2012 on regular Levetiracetam; last neurology review in March 2025."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-04-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-10",
+   "accident": false,
+   "condition": "Epilepsy - breakthrough seizure",
+   "specified_disease_category": false,
+   "diagnosis_date": "2012-01-01",
+   "last_advice_or_treatment_before_inception": "2025-03-01",
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C13",
+  "tests": "HARD: OCR noise + RELATIVE date ('3 yrs back') + vague letter with no clause -> diagnosis date cannot be verified -> human",
+  "expected": "NEEDS_HUMAN",
+  "documents": {
+   "policy_schedule": "P0LICY SCHEDULF\nProduct: Fami1y Health 0ptima lnsurance Plan\nUIN: SHAHLIP26046V092526\nInsured: R. Kulkarni (58)\nInceptn dt: 01-01-2025\nPortabilty: NA\nPED decl: Nil",
+   "rejection_letter": "Dear Sir, claim is not payable as per policy terms and conditions since the ailment was present prior to policy.",
+   "discharge_summary": "DOA:12-02-26  Dx: CKD stage 3. H/o raised creatinine noted 3 yrs back, on nephrology f/u."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "prior_continuous_coverage_months": 0,
+   "accident": false,
+   "specified_disease_category": false,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "first_inception_date": "2025-01-01",
+   "admission_date": "2026-02-12",
+   "condition": "Chronic kidney disease",
+   "diagnosis_date": null,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  }
+ },
+ {
+  "id": "C14",
+  "tests": "HARD: key fact only in HINDI; diabetes 'since 2019' is outside the 36-month window and no treatment date given -> must NOT conclude 'not PED' -> human",
+  "expected": "NEEDS_HUMAN",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Sunita Yadav (55)\nFirst inception with insurer: 01/02/2024\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "The insured is a known diabetic prior to inception, which was not disclosed in the proposal form. Claim repudiated for non-disclosure under Code Excl 01.",
+   "discharge_summary": "Admitted 15/03/2026 with diabetic foot infection. पुराना इतिहास: मरीज़ को 2019 से मधुमेह है।"
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "prior_continuous_coverage_months": 0,
+   "accident": false,
+   "specified_disease_category": false,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "first_inception_date": "2024-02-01",
+   "admission_date": "2026-03-15",
+   "condition": "Diabetic foot infection",
+   "diagnosis_date": "2019-01-01",
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ },
+ {
+  "id": "C15",
+  "tests": "HARD: TWO admissions in documents; the claim is for the later one (26 months -> wait over); picking the earlier date (21 months) flips the answer",
+  "expected": "LIKELY_INVALID",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Deepak Menon (44)\nFirst inception with insurer: 01/12/2023, renewed without break\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Claim No. 88231 for hospitalisation from 10/02/2026 for ureteric calculus is repudiated under Code Excl 02 (24 months waiting period for kidney calculi).",
+   "discharge_summary": "Current admission: 10/02/2026. Left ureteric calculus 7 mm, URS + DJ stenting. Previous admission: 01/09/2025 at same hospital for renal colic, managed conservatively; calculus first detected then."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "prior_continuous_coverage_months": 0,
+   "accident": false,
+   "specified_disease_category": true,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "first_inception_date": "2023-12-01",
+   "admission_date": "2026-02-10",
+   "condition": "Ureteric calculus",
+   "diagnosis_date": "2025-09-01",
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  }
+ },
+ {
+  "id": "C16",
+  "tests": "HARD: insurer cites the WRONG clause (PED) for gallstones first found after the policy; PED ground fails but Excl 02 (24 months) still applies -> don't tell user to fight blindly",
+  "expected": "NEEDS_HUMAN",
+  "documents": {
+   "policy_schedule": "POLICY SCHEDULE\nProduct: Family Health Optima Insurance Plan\nUIN: SHAHLIP26046V092526\nInsured: Lata Pillai (49)\nFirst inception with insurer: 01/03/2025\nPortability: Nil\nPED declared: Nil",
+   "rejection_letter": "Cholelithiasis is a pre-existing condition. Claim repudiated under Code Excl 01.",
+   "discharge_summary": "Admitted 15/01/2026. Lap cholecystectomy for symptomatic cholelithiasis. Gallstones first detected on USG dated 20/12/2025. No prior history."
+  },
+  "gold_facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "prior_continuous_coverage_months": 0,
+   "accident": false,
+   "specified_disease_category": true,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "first_inception_date": "2025-03-01",
+   "admission_date": "2026-01-15",
+   "condition": "Cholelithiasis",
+   "diagnosis_date": "2025-12-20",
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  }
+ }
+]
