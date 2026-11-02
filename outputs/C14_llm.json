@@ -1,0 +1,76 @@
+{
+ "case": "C14",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2024-02-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-03-15",
+   "accident": false,
+   "condition": "diabetic foot infection",
+   "specified_disease_category": false,
+   "diagnosis_date": "2019-01-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "non_disclosure"
+   ],
+   "clause_cited": "Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/02/2024",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted 15/03/2026 with diabetic foot infection.",
+   "accident": "Admitted 15/03/2026 with diabetic foot infection.",
+   "condition": "Admitted 15/03/2026 with diabetic foot infection.",
+   "specified_disease_category": "Admitted 15/03/2026 with diabetic foot infection.",
+   "diagnosis_date": "\u092a\u0941\u0930\u093e\u0928\u093e \u0907\u0924\u093f\u0939\u093e\u0938: \u092e\u0930\u0940\u091c\u093c \u0915\u094b 2019 \u0938\u0947 \u092e\u0927\u0941\u092e\u0947\u0939 \u0939\u0948\u0964",
+   "symptoms_before_inception": "The insured is a known diabetic prior to inception",
+   "declared_at_proposal": "which was not disclosed in the proposal form.",
+   "rejection_grounds": "Claim repudiated for non-disclosure under Code Excl 01.",
+   "clause_cited": "Claim repudiated for non-disclosure under Code Excl 01."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2024-02-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-03-15",
+   "accident": false,
+   "condition": "diabetic foot infection",
+   "specified_disease_category": false,
+   "diagnosis_date": "2019-01-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "non_disclosure"
+   ],
+   "clause_cited": "Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "non_disclosure",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "diagnosed 2019-01-01, more than 36 months before policy start; the documents do not say whether it was treated within 36 months before the policy - medical history needed",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 25,
+   "days_since_inception": 773,
+   "portability_credit_months": 0
+  },
+  "verdict": "NEEDS_HUMAN"
+ }
+}

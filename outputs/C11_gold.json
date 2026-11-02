@@ -1,0 +1,33 @@
+{
+ "case": "C11",
+ "extraction": null,
+ "result": {
+  "facts_used": {
+   "policy_uin": "EXGHLIP99999V010101",
+   "first_inception_date": "2024-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-01",
+   "accident": false,
+   "condition": "Multinodular goitre",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "clause 4.2"
+  },
+  "findings": [
+   {
+    "ground": "any",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "Policy UIN 'EXGHLIP99999V010101' is not in the knowledge base; cannot apply its wording. Add the wording before judging.",
+    "cites": []
+   }
+  ],
+  "flags": [],
+  "verdict": "NEEDS_HUMAN"
+ }
+}

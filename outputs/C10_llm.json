@@ -1,0 +1,80 @@
+{
+ "case": "C10",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-05-01",
+   "prior_continuous_coverage_months": 30,
+   "admission_date": "2025-11-01",
+   "accident": false,
+   "condition": "Acute exacerbation of bronchial asthma",
+   "specified_disease_category": false,
+   "diagnosis_date": "2023-01-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/05/2025",
+   "prior_continuous_coverage_months": "Ported from previous insurer with 30 months of continuous coverage",
+   "admission_date": "Admission date 01/11/2025.",
+   "accident": "Acute exacerbation of bronchial asthma.",
+   "condition": "Acute exacerbation of bronchial asthma.",
+   "specified_disease_category": "Acute exacerbation of bronchial asthma.",
+   "diagnosis_date": "Asthma diagnosed in January 2023, on inhalers.",
+   "symptoms_before_inception": "Asthma diagnosed in January 2023, on inhalers.",
+   "declared_at_proposal": "PED declared and accepted: Bronchial asthma",
+   "rejection_grounds": "We have reviewed your claim and regret that it is not payable since the illness is pre-existing."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-05-01",
+   "prior_continuous_coverage_months": 30,
+   "admission_date": "2025-11-01",
+   "accident": false,
+   "condition": "Acute exacerbation of bronchial asthma",
+   "specified_disease_category": false,
+   "diagnosis_date": "2023-01-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "LIKELY_INVALID",
+    "reason": "PED (diagnosed on 2023-01-01 (28 months before policy start; limit 36)) was declared and 36 months >= 36 waiting period.",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [
+   {
+    "issue": "Rejection letter cites no specific policy clause",
+    "cite": "Para 17(b) (p.9): repudiation must give reference to the specific terms and conditions of the policy"
+   }
+  ],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 36,
+   "days_since_inception": 184,
+   "portability_credit_months": 30
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

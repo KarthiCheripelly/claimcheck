@@ -1,0 +1,84 @@
+{
+ "case": "C16",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-03-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-15",
+   "accident": false,
+   "condition": "symptomatic cholelithiasis",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-12-20",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/03/2025",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted 15/01/2026.",
+   "accident": "Lap cholecystectomy for symptomatic cholelithiasis.",
+   "condition": "Lap cholecystectomy for symptomatic cholelithiasis.",
+   "specified_disease_category": "Lap cholecystectomy for symptomatic cholelithiasis.",
+   "diagnosis_date": "Gallstones first detected on USG dated 20/12/2025.",
+   "symptoms_before_inception": "No prior history.",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "Cholelithiasis is a pre-existing condition.",
+   "clause_cited": "Claim repudiated under Code Excl 01."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-03-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-15",
+   "accident": false,
+   "condition": "symptomatic cholelithiasis",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-12-20",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "LIKELY_INVALID",
+    "reason": "Condition does not meet the PED definition: first diagnosed 2025-12-20, after the policy start.",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   },
+   {
+    "ground": "specified_waiting",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "Cited reason looks wrong, BUT this exclusion (not cited by insurer) appears to apply: 10 months of cover < 24 required.",
+    "cites": [
+     "Standard Exclusion Code Excl 02 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 10,
+   "days_since_inception": 320,
+   "portability_credit_months": 0
+  },
+  "verdict": "NEEDS_HUMAN"
+ }
+}

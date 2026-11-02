@@ -1,0 +1,79 @@
+{
+ "case": "C13",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-12",
+   "accident": false,
+   "condition": "CKD stage 3",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "Inceptn dt: 01-01-2025",
+   "prior_continuous_coverage_months": "Portabilty: NA",
+   "admission_date": "DOA:12-02-26",
+   "accident": "Dx: CKD stage 3",
+   "condition": "Dx: CKD stage 3",
+   "specified_disease_category": "Dx: CKD stage 3",
+   "symptoms_before_inception": "H/o raised creatinine noted 3 yrs back, on nephrology f/u.",
+   "declared_at_proposal": "PED decl: Nil",
+   "rejection_grounds": "claim is not payable as per policy terms and conditions since the ailment was present prior to policy."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-12",
+   "accident": false,
+   "condition": "CKD stage 3",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": null
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "no verifiable diagnosis date in the documents - cannot tell if the condition pre-dates the policy",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [
+   {
+    "issue": "Rejection letter cites no specific policy clause",
+    "cite": "Para 17(b) (p.9): repudiation must give reference to the specific terms and conditions of the policy"
+   }
+  ],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 13,
+   "days_since_inception": 407,
+   "portability_credit_months": 0
+  },
+  "verdict": "NEEDS_HUMAN"
+ }
+}

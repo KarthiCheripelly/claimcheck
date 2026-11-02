@@ -1,0 +1,76 @@
+{
+ "case": "C07",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-02-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-12-01",
+   "accident": false,
+   "condition": "Coronary Artery Disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-11-20",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": true,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/02/2025",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted 01/12/2025 for elective angioplasty.",
+   "accident": "elective angioplasty",
+   "condition": "The ailment Coronary Artery Disease is pre-existing in nature as per the history recorded.",
+   "specified_disease_category": "Coronary Artery Disease",
+   "diagnosis_date": "CAD diagnosed on 20/11/2025 by coronary angiography.",
+   "symptoms_before_inception": "patient gives history of occasional chest discomfort on exertion since 2024, not evaluated earlier.",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "The ailment Coronary Artery Disease is pre-existing in nature as per the history recorded.",
+   "clause_cited": "Claim is not payable under Code Excl 01."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-02-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-12-01",
+   "accident": false,
+   "condition": "Coronary Artery Disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-11-20",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": true,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "only symptoms are recorded before the policy start - no diagnosis or treatment. Courts have held a PED must be diagnosed, not merely symptomatic; a doctor must review",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 10,
+   "days_since_inception": 303,
+   "portability_credit_months": 0
+  },
+  "verdict": "NEEDS_HUMAN"
+ }
+}

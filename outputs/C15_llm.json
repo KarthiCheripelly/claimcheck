@@ -1,0 +1,75 @@
+{
+ "case": "C15",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-12-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-10",
+   "accident": false,
+   "condition": "Left ureteric calculus",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-09-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/12/2023, renewed without break",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Current admission: 10/02/2026",
+   "accident": "Left ureteric calculus 7 mm, URS + DJ stenting",
+   "condition": "Left ureteric calculus 7 mm",
+   "specified_disease_category": "24 months waiting period for kidney calculi",
+   "diagnosis_date": "Previous admission: 01/09/2025 at same hospital for renal colic, managed conservatively; calculus first detected then.",
+   "symptoms_before_inception": "Previous admission: 01/09/2025 at same hospital for renal colic, managed conservatively; calculus first detected then.",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "repudiated under Code Excl 02 (24 months waiting period for kidney calculi).",
+   "clause_cited": "Code Excl 02"
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-12-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-10",
+   "accident": false,
+   "condition": "Left ureteric calculus",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-09-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  },
+  "findings": [
+   {
+    "ground": "specified_waiting",
+    "verdict": "LIKELY_INVALID",
+    "reason": "26 months of cover >= 24; waiting period over.",
+    "cites": [
+     "Standard Exclusion Code Excl 02 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 26,
+   "days_since_inception": 802,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

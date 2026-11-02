@@ -1,0 +1,41 @@
+{
+ "case": "C02",
+ "extraction": null,
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-06-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-22",
+   "accident": true,
+   "condition": "Fracture distal radius",
+   "specified_disease_category": false,
+   "diagnosis_date": "2025-06-22",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Code Excl 03"
+  },
+  "findings": [
+   {
+    "ground": "initial_waiting",
+    "verdict": "LIKELY_INVALID",
+    "reason": "30-day exclusion does not apply to accidents.",
+    "cites": [
+     "Standard Exclusion Code Excl 03 (p.29)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 0,
+   "days_since_inception": 12,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

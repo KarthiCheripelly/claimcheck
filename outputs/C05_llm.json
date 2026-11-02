@@ -1,0 +1,87 @@
+{
+ "case": "C05",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-01",
+   "accident": false,
+   "condition": "hypertension",
+   "specified_disease_category": false,
+   "diagnosis_date": "2024-05-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/01/2025",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted on 01/02/2026 with hypertensive urgency.",
+   "accident": "Admitted on 01/02/2026 with hypertensive urgency.",
+   "condition": "suffering from hypertension prior to inception of the policy",
+   "specified_disease_category": "suffering from hypertension prior to inception of the policy",
+   "diagnosis_date": "Hypertension diagnosed in May 2024 at local clinic",
+   "symptoms_before_inception": "Hypertension diagnosed in May 2024 at local clinic, on Amlodipine 5 mg since then.",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "suffering from hypertension prior to inception of the policy which was not disclosed in the proposal. The claim is repudiated under Code Excl 01 and for non-disclosure of material facts.",
+   "clause_cited": "Code Excl 01"
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-02-01",
+   "accident": false,
+   "condition": "hypertension",
+   "specified_disease_category": false,
+   "diagnosis_date": "2024-05-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "LIKELY_VALID",
+    "reason": "PED (diagnosed on 2024-05-01 (8 months before policy start; limit 36)) not declared at proposal and cover is 13 months (< 60 moratorium).",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   },
+   {
+    "ground": "non_disclosure",
+    "verdict": "LIKELY_VALID",
+    "reason": "PED (diagnosed on 2024-05-01 (8 months before policy start; limit 36)) not declared at proposal and cover is 13 months (< 60 moratorium).",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 13,
+   "days_since_inception": 396,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_VALID"
+ }
+}

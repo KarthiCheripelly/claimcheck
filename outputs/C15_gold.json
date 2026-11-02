@@ -1,0 +1,41 @@
+{
+ "case": "C15",
+ "extraction": null,
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "prior_continuous_coverage_months": 0,
+   "accident": false,
+   "specified_disease_category": true,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "first_inception_date": "2023-12-01",
+   "admission_date": "2026-02-10",
+   "condition": "Ureteric calculus",
+   "diagnosis_date": "2025-09-01",
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "Code Excl 02"
+  },
+  "findings": [
+   {
+    "ground": "specified_waiting",
+    "verdict": "LIKELY_INVALID",
+    "reason": "26 months of cover >= 24; waiting period over.",
+    "cites": [
+     "Standard Exclusion Code Excl 02 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 26,
+   "days_since_inception": 802,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

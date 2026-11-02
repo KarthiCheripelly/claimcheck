@@ -1,0 +1,76 @@
+{
+ "case": "C03",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-01-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-04-05",
+   "accident": false,
+   "condition": "Diabetic ketoacidosis",
+   "specified_disease_category": false,
+   "diagnosis_date": "2021-06-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 10/01/2023 (renewed without break)",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "DOA 05/04/2026",
+   "accident": "Diagnosis: Diabetic ketoacidosis.",
+   "condition": "Diagnosis: Diabetic ketoacidosis.",
+   "specified_disease_category": "Diagnosis: Diabetic ketoacidosis.",
+   "diagnosis_date": "Known case of Type 2 Diabetes Mellitus since June 2021, on oral hypoglycaemics.",
+   "symptoms_before_inception": "Known case of Type 2 Diabetes Mellitus since June 2021, on oral hypoglycaemics.",
+   "declared_at_proposal": "Pre-existing diseases declared and accepted: Type 2 Diabetes Mellitus",
+   "rejection_grounds": "Your claim towards admission on 05/04/2026 for diabetic ketoacidosis is a direct complication of a pre-existing disease and is therefore excluded under Code Excl 01.",
+   "clause_cited": "excluded under Code Excl 01."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2023-01-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-04-05",
+   "accident": false,
+   "condition": "Diabetic ketoacidosis",
+   "specified_disease_category": false,
+   "diagnosis_date": "2021-06-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": true,
+   "rejection_grounds": [
+    "ped"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "LIKELY_INVALID",
+    "reason": "PED (diagnosed on 2021-06-01 (19 months before policy start; limit 36)) was declared and 38 months >= 36 waiting period.",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 38,
+   "days_since_inception": 1181,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

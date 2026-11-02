@@ -29,10 +29,10 @@ python run.py --eval                 # rules engine on hand-written facts (no ke
 python run.py --case C06             # one case with full reasoning + draft letter
 # full pipeline with the AI reading the documents:
 export OPENROUTER_API_KEY=...        # free key: https://openrouter.ai
-export OPENROUTER_MODEL=google/gemma-4-31b-it:free   # optional
+export OPENROUTER_MODEL=nvidia/nemotron-3.5-super-vl:free   # optional (this is the default)
 python run.py --eval --mode llm
 ```
-Outputs are saved in `outputs/`.
+Outputs are saved in `outputs/`. The `outputs/` folder in this repo holds the final run: `*_gold.json` (engine on hand-written facts) and `*_llm.json` (full pipeline, AI reading the documents).
 
 ## Test cases (`cases/cases.json`) – ALL SYNTHETIC (made up; names and people are fictional)
 | ID | What it tests | Expected |
@@ -104,3 +104,6 @@ see `SOURCES.md` for download links. `knowledge/rules.json` records the clause a
 ## API key
 Either set `OPENROUTER_API_KEY` in your environment, or create a file `.env` next to `run.py` containing
 `OPENROUTER_API_KEY=...`. `.env` is git-ignored – never commit it.
+
+## LLM logs
+`llm_logs/LLM_chat_log.md` is the readable conversation with the LLM (Claude Code) used to research, design and build this, with tool calls summarised. `llm_logs/LLM_raw_transcript.jsonl` is the raw session transcript.

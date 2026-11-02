@@ -8,7 +8,7 @@ from __future__ import annotations
 import json, os, re
 import requests
 
-MODEL = os.environ.get("OPENROUTER_MODEL", "google/gemma-4-31b-it:free")
+MODEL = os.environ.get("OPENROUTER_MODEL", "nvidia/nemotron-3.5-super-vl:free")
 URL = "https://openrouter.ai/api/v1/chat/completions"
 
 FIELDS = {

@@ -1,0 +1,72 @@
+{
+ "case": "C02",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-06-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-22",
+   "accident": true,
+   "condition": "Fracture distal radius, right",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": null,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Excl 03"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 10/06/2025",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Date of admission: 22/06/2025",
+   "accident": "Patient brought to casualty following a road traffic accident (two-wheeler skid)",
+   "condition": "Diagnosis: Fracture distal radius, right",
+   "specified_disease_category": "Patient brought to casualty following a road traffic accident (two-wheeler skid). Diagnosis: Fracture distal radius, right.",
+   "rejection_grounds": "We regret to inform you that claim for admission dated 22/06/2025 falls within the initial 30 days waiting period (Code Excl 03) and hence is not admissible.",
+   "clause_cited": "Code Excl 03"
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-06-10",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-22",
+   "accident": true,
+   "condition": "Fracture distal radius, right",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": null,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Excl 03"
+  },
+  "findings": [
+   {
+    "ground": "initial_waiting",
+    "verdict": "LIKELY_INVALID",
+    "reason": "30-day exclusion does not apply to accidents.",
+    "cites": [
+     "Standard Exclusion Code Excl 03 (p.29)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 0,
+   "days_since_inception": 12,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}

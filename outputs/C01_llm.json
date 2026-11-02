@@ -1,0 +1,73 @@
+{
+ "case": "C01",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-03-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-03-15",
+   "accident": false,
+   "condition": "Dengue fever",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Code Excl 03"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/03/2025",
+   "prior_continuous_coverage_months": "Portability: Not applicable (fresh policy)",
+   "admission_date": "Admitted 15/03/2025",
+   "accident": "Diagnosis: Dengue fever (NS1 positive)",
+   "condition": "Diagnosis: Dengue fever (NS1 positive)",
+   "specified_disease_category": "Diagnosis: Dengue fever (NS1 positive)",
+   "symptoms_before_inception": "No significant past history.",
+   "rejection_grounds": "your claim for hospitalisation from 15/03/2025 for Dengue fever has been repudiated as the illness was contracted within the first 30 days of the policy",
+   "clause_cited": "excluded under Code Excl 03"
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-03-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-03-15",
+   "accident": false,
+   "condition": "Dengue fever",
+   "specified_disease_category": false,
+   "diagnosis_date": null,
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": null,
+   "rejection_grounds": [
+    "initial_waiting"
+   ],
+   "clause_cited": "Code Excl 03"
+  },
+  "findings": [
+   {
+    "ground": "initial_waiting",
+    "verdict": "LIKELY_VALID",
+    "reason": "Admitted 14 days after policy start (< 30).",
+    "cites": [
+     "Standard Exclusion Code Excl 03 (p.29)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 0,
+   "days_since_inception": 14,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_VALID"
+ }
+}

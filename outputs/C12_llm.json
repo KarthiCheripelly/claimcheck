@@ -1,0 +1,88 @@
+{
+ "case": "C12",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-04-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-10",
+   "accident": false,
+   "condition": "epilepsy",
+   "specified_disease_category": false,
+   "diagnosis_date": "2012-01-01",
+   "last_advice_or_treatment_before_inception": "2025-03-01",
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP26046V092526",
+   "first_inception_date": "First inception with insurer: 01/04/2025",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted 10/01/2026 with breakthrough seizure.",
+   "accident": "Admitted 10/01/2026 with breakthrough seizure.",
+   "condition": "Known case of epilepsy since 2012 on regular Levetiracetam",
+   "specified_disease_category": "Known case of epilepsy since 2012 on regular Levetiracetam",
+   "diagnosis_date": "Known case of epilepsy since 2012 on regular Levetiracetam",
+   "last_advice_or_treatment_before_inception": "last neurology review in March 2025",
+   "symptoms_before_inception": "Known case of epilepsy since 2012 on regular Levetiracetam; last neurology review in March 2025.",
+   "declared_at_proposal": "not declared at proposal stage.",
+   "rejection_grounds": "Insured is a known epileptic prior to the policy, not declared at proposal stage.",
+   "clause_cited": "Claim repudiated under Code Excl 01."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP26046V092526",
+   "first_inception_date": "2025-04-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-01-10",
+   "accident": false,
+   "condition": "epilepsy",
+   "specified_disease_category": false,
+   "diagnosis_date": "2012-01-01",
+   "last_advice_or_treatment_before_inception": "2025-03-01",
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "ped",
+    "non_disclosure"
+   ],
+   "clause_cited": "Code Excl 01"
+  },
+  "findings": [
+   {
+    "ground": "ped",
+    "verdict": "LIKELY_VALID",
+    "reason": "PED (treated/advised on 2025-03-01 (1 months before policy start; limit 36)) not declared at proposal and cover is 9 months (< 60 moratorium).",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   },
+   {
+    "ground": "non_disclosure",
+    "verdict": "LIKELY_VALID",
+    "reason": "PED (treated/advised on 2025-03-01 (1 months before policy start; limit 36)) not declared at proposal and cover is 9 months (< 60 moratorium).",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.6)",
+     "Standard Exclusion Code Excl 01 (p.28)"
+    ]
+   }
+  ],
+  "flags": [],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.26 / 2026",
+   "months_continuous_coverage": 9,
+   "days_since_inception": 284,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_VALID"
+ }
+}

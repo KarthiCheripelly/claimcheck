@@ -1,0 +1,66 @@
+{
+ "case": "C11",
+ "extraction": {
+  "facts": {
+   "policy_uin": "EXGHLIP99999V010101",
+   "first_inception_date": "2024-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-01",
+   "accident": false,
+   "condition": "multinodular goitre",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": null,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "4.2"
+  },
+  "evidence": {
+   "policy_uin": "UIN: EXGHLIP99999V010101",
+   "first_inception_date": "First inception with insurer: 01/01/2024",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admitted 01/06/2025",
+   "accident": "Total thyroidectomy for multinodular goitre diagnosed 01/04/2025",
+   "condition": "Total thyroidectomy for multinodular goitre diagnosed 01/04/2025",
+   "specified_disease_category": "Claim for thyroidectomy is rejected under the 24 months waiting period clause 4.2.",
+   "diagnosis_date": "Total thyroidectomy for multinodular goitre diagnosed 01/04/2025",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "Claim for thyroidectomy is rejected under the 24 months waiting period clause 4.2.",
+   "clause_cited": "Claim for thyroidectomy is rejected under the 24 months waiting period clause 4.2."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "EXGHLIP99999V010101",
+   "first_inception_date": "2024-01-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2025-06-01",
+   "accident": false,
+   "condition": "multinodular goitre",
+   "specified_disease_category": true,
+   "diagnosis_date": "2025-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": null,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "specified_waiting"
+   ],
+   "clause_cited": "4.2"
+  },
+  "findings": [
+   {
+    "ground": "any",
+    "verdict": "NEEDS_HUMAN",
+    "reason": "Policy UIN 'EXGHLIP99999V010101' is not in the knowledge base; cannot apply its wording. Add the wording before judging.",
+    "cites": []
+   }
+  ],
+  "flags": [],
+  "verdict": "NEEDS_HUMAN"
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "case": "C06",
+ "extraction": {
+  "facts": {
+   "policy_uin": "SHAHLIP23164V072223",
+   "first_inception_date": "2020-08-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-03-10",
+   "accident": false,
+   "condition": "Ischaemic Heart Disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2019-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "non_disclosure"
+   ],
+   "clause_cited": null
+  },
+  "evidence": {
+   "policy_uin": "UIN: SHAHLIP23164V072223",
+   "first_inception_date": "First inception with insurer: 01/08/2020, continuously renewed",
+   "prior_continuous_coverage_months": "Portability: Nil",
+   "admission_date": "Admission: 10/03/2026.",
+   "accident": "History: Old case of IHD diagnosed April 2019, on Aspirin and Atorvastatin.",
+   "condition": "The insured had Ischaemic Heart Disease prior to taking the policy, which was not disclosed.",
+   "specified_disease_category": "The insured had Ischaemic Heart Disease prior to taking the policy, which was not disclosed.",
+   "diagnosis_date": "History: Old case of IHD diagnosed April 2019, on Aspirin and Atorvastatin.",
+   "symptoms_before_inception": "History: Old case of IHD diagnosed April 2019, on Aspirin and Atorvastatin.",
+   "declared_at_proposal": "PED declared: Nil",
+   "rejection_grounds": "As this amounts to non-disclosure of material information, the claim stands repudiated."
+  },
+  "dropped_unverified": [],
+  "model": "nvidia/nemotron-3.5-super-vl:free"
+ },
+ "result": {
+  "facts_used": {
+   "policy_uin": "SHAHLIP23164V072223",
+   "first_inception_date": "2020-08-01",
+   "prior_continuous_coverage_months": 0,
+   "admission_date": "2026-03-10",
+   "accident": false,
+   "condition": "Ischaemic Heart Disease",
+   "specified_disease_category": false,
+   "diagnosis_date": "2019-04-01",
+   "last_advice_or_treatment_before_inception": null,
+   "symptoms_before_inception": false,
+   "declared_at_proposal": false,
+   "rejection_grounds": [
+    "non_disclosure"
+   ],
+   "clause_cited": null
+  },
+  "findings": [
+   {
+    "ground": "non_disclosure",
+    "verdict": "LIKELY_INVALID",
+    "reason": "PED (diagnosed on 2019-04-01 (16 months before policy start; limit 48)), but 67 months of continuous cover >= 60: moratorium bars non-disclosure grounds unless fraud is established (fraud = human decision).",
+    "cites": [
+     "Definitions - Pre-Existing Disease (p.4)",
+     "Standard Exclusion Code Excl 01 (p.10)",
+     "Para 13 (p.8): no policy/claim contestable on non-disclosure/misrepresentation, except established fraud, after 60 months of continuous coverage"
+    ]
+   }
+  ],
+  "flags": [
+   {
+    "issue": "Rejection letter cites no specific policy clause",
+    "cite": "Para 17(b) (p.9): repudiation must give reference to the specific terms and conditions of the policy"
+   }
+  ],
+  "computed": {
+   "policy": "Star Health Family Health Optima, V.19 / 2023",
+   "months_continuous_coverage": 67,
+   "days_since_inception": 2047,
+   "portability_credit_months": 0
+  },
+  "verdict": "LIKELY_INVALID"
+ }
+}
